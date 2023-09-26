@@ -37,7 +37,7 @@ cd "$DIR_REPOS" && ./get_repos.sh
 echo
 echo "Setting up Major ... "
 MAJOR_VERSION="1.3.2"
-MAJOR_URL="http://mutation-testing.org/downloads"
+MAJOR_URL="https://github.com/slatbox/defects4j/releases/download/v1.2.0"
 MAJOR_ZIP="major-${MAJOR_VERSION}_jre7.zip"
 cd "$BASE" && wget -nv -N "$MAJOR_URL/$MAJOR_ZIP" \
            && unzip -o "$MAJOR_ZIP" > /dev/null \
@@ -51,7 +51,7 @@ cd "$BASE" && wget -nv -N "$MAJOR_URL/$MAJOR_ZIP" \
 echo
 echo "Setting up EvoSuite ... "
 EVOSUITE_VERSION="0.2.0"
-EVOSUITE_URL="http://people.cs.umass.edu/~rjust/defects4j/download"
+EVOSUITE_URL="https://github.com/slatbox/defects4j/releases/download/v1.2.0"
 EVOSUITE_JAR="evosuite-${EVOSUITE_VERSION}.jar"
 EVOSUITE_RT_JAR="evosuite-standalone-runtime-${EVOSUITE_VERSION}.jar"
 cd "$DIR_LIB_GEN" && [ ! -f "$EVOSUITE_JAR" ] \
@@ -69,7 +69,7 @@ ln -sf "$DIR_LIB_RT/$EVOSUITE_RT_JAR" "$DIR_LIB_RT/evosuite-rt.jar"
 echo
 echo "Setting up Randoop ... "
 RANDOOP_VERSION="3.1.5"
-RANDOOP_URL="https://github.com/randoop/randoop/releases/download/v${RANDOOP_VERSION}"
+RANDOOP_URL="https://github.com/slatbox/defects4j/releases/download/v1.2.0"
 RANDOOP_JAR="randoop-all-${RANDOOP_VERSION}.jar"
 cd "$DIR_LIB_GEN" && [ ! -f "$RANDOOP_JAR" ] \
                   && wget -nv "$RANDOOP_URL/$RANDOOP_JAR"
@@ -99,7 +99,7 @@ else
     old_ts=0
 fi
 # Only download archive if the server has a newer file
-wget -N http://people.cs.umass.edu/~rjust/defects4j/download/$GRADLE_ZIP
+wget -N https://github.com/slatbox/defects4j/releases/download/v1.2.0/$GRADLE_ZIP
 new=$($cmd)
 
 # Update gradle versions if a newer archive was available

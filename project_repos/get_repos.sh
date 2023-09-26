@@ -28,7 +28,7 @@ else
     old=0
 fi
 # Only download repos if the server has a newer file
-wget -N http://people.cs.umass.edu/~rjust/defects4j/download/$ARCHIVE
+wget -N https://github.com/slatbox/defects4j/releases/download/v1.2.0/$ARCHIVE
 new=$($cmd)
 
 # Exit if no newer file is available
