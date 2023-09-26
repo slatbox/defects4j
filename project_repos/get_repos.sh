@@ -38,7 +38,7 @@ fi
 download_url() {
     BASENAME=`basename ${@: -1}`
     if [ "$(uname)" = "Darwin" ] ; then
-        wget -nv -N "$@"
+        wget -N "$@"
     else
 	timeout 300 curl -s -S -R -L -O -z "$BASENAME" "$@" || (echo "retrying curl $@" && rm -f "$BASENAME" && curl -R -L -O -z "$BASENAME" "$@")
     fi
@@ -59,7 +59,7 @@ else
     old=0
 fi
 # Only download repos if the server has a newer file
-download_url "https://defects4j.org/downloads/$ARCHIVE"
+download_url "https://github.com/slatbox/defects4j/releases/download/v2.0.0/$ARCHIVE"
 
 new=$($cmd)
 

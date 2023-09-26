@@ -40,7 +40,7 @@ if ! unzip -v > /dev/null 2>&1; then
     print_error_and_exit "Couldn't find unzip to extract dependencies. Please install unzip and re-run this script."
 fi
 ################################################################################
-HOST_URL="https://defects4j.org/downloads"
+HOST_URL="https://github.com/slatbox/defects4j/releases/download/v2.0.0"
 
 # Directories for project repositories and external libraries
 BASE="$(cd "$(dirname "$0")"; pwd)"
@@ -139,7 +139,7 @@ cd "$DIR_REPOS" && ./get_repos.sh
 echo
 echo "Setting up Major ... "
 MAJOR_VERSION="1.3.4"
-MAJOR_URL="https://mutation-testing.org/downloads"
+MAJOR_URL="https://github.com/slatbox/defects4j/releases/download/v2.0.0"
 MAJOR_ZIP="major-${MAJOR_VERSION}_jre7.zip"
 cd "$BASE" && download_url_and_unzip "$MAJOR_URL/$MAJOR_ZIP" \
            && rm "$MAJOR_ZIP" \
@@ -152,7 +152,7 @@ cd "$BASE" && download_url_and_unzip "$MAJOR_URL/$MAJOR_ZIP" \
 echo
 echo "Setting up EvoSuite ... "
 EVOSUITE_VERSION="1.1.0"
-EVOSUITE_URL="https://github.com/EvoSuite/evosuite/releases/download/v${EVOSUITE_VERSION}"
+EVOSUITE_URL="https://github.com/slatbox/defects4j/releases/download/v2.0.0"
 EVOSUITE_JAR="evosuite-${EVOSUITE_VERSION}.jar"
 EVOSUITE_RT_JAR="evosuite-standalone-runtime-${EVOSUITE_VERSION}.jar"
 cd "$DIR_LIB_GEN" && download_url "$EVOSUITE_URL/$EVOSUITE_JAR"
@@ -168,7 +168,7 @@ cd "$DIR_LIB_RT"  && download_url "$EVOSUITE_URL/$EVOSUITE_RT_JAR"
 echo
 echo "Setting up Randoop ... "
 RANDOOP_VERSION="4.2.5"
-RANDOOP_URL="https://github.com/randoop/randoop/releases/download/v${RANDOOP_VERSION}"
+RANDOOP_URL="https://github.com/slatbox/defects4j/releases/download/v2.0.0"
 RANDOOP_ZIP="randoop-${RANDOOP_VERSION}.zip"
 RANDOOP_JAR="randoop-all-${RANDOOP_VERSION}.jar"
 REPLACECALL_JAR="replacecall-${RANDOOP_VERSION}.jar"
@@ -222,7 +222,7 @@ echo "Setting up utility programs ... "
 
 BUILD_ANALYZER_VERSION="0.0.1"
 BUILD_ANALYZER_JAR=build-analyzer-$BUILD_ANALYZER_VERSION.jar
-BUILD_ANALYZER_URL="https://github.com/jose/build-analyzer/releases/download/v$BUILD_ANALYZER_VERSION/$BUILD_ANALYZER_JAR"
+BUILD_ANALYZER_URL="https://github.com/slatbox/defects4j/releases/download/v2.0.0/$BUILD_ANALYZER_JAR"
 BUILD_ANALYZER_JAR_LOCAL="analyzer.jar"
 cd "$BASE/framework/lib" && download_url "$BUILD_ANALYZER_URL"
 rm -f "$BUILD_ANALYZER_JAR_LOCAL"
